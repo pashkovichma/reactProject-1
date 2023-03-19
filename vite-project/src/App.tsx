@@ -1,24 +1,24 @@
-import { HashRouter, Route, Routes } from 'react-router-dom';
-import Home from './pages/Home';
-import AboutUs from './pages/AboutUS';
-import NotFound from './pages/404';
+import React from 'react';
+import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
+import './App.css';
 
-export function App() {
+import HomePage from './pages/HomePage';
+import AboutUsPage from './pages/AboutUSPage';
+import NotFoundPage from './pages/NotFoundPage';
+
+import Header from './components/header';
+
+function App() {
   return (
-    <div>
+    <BrowserRouter>
+      <Header />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/aboutus" element={<AboutUs />} />
-        <Route path="*" element={<NotFound />} />
+        <Route path="/" element={<HomePage />} />
+        <Route path="/aboutus" element={<AboutUsPage />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
-    </div>
-  )
-}
-
-export function WrappedApp() {
-  return (
-    <HashRouter>
-      <App />
-    </HashRouter>
+    </BrowserRouter>
   );
 }
+
+export default App;
