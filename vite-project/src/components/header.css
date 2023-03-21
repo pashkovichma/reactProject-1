@@ -1,0 +1,17 @@
+.navigation__list {
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+}
+
+.navigation__item:hover {
+    text-decoration: underline;
+}
+
+.navigation__link {
+    color: grey;
+}
+
+.navigation__link.active {
+    color: black;
+}
