@@ -38,17 +38,29 @@ export class Header extends React.Component<Record<string, never>, IHeaderState>
           <h2 className="current-page">{this.state.namePage}</h2>
           <ul className="navigation__list">
             <li className="navigation__item">
-              <NavLink className="navigation__link" to={'/'} onClick={() => this.handleClick('Home')}>
+              <NavLink
+                className="navigation__link"
+                to={'/'}
+                onClick={() => this.handleClick('Home')}
+              >
                 Home
               </NavLink>
             </li>
             <li className="navigation__item">
-              <NavLink className="navigation__link" to={'/aboutus'} onClick={() => this.handleClick('About us')}>
+              <NavLink
+                className="navigation__link"
+                to={'/aboutus'}
+                onClick={() => this.handleClick('About us')}
+              >
                 About us
               </NavLink>
             </li>
             <li className="navigation__item">
-              <NavLink className="navigation__link" to={'/form'} onClick={() => this.handleClick('Form')}>
+              <NavLink
+                className="navigation__link"
+                to={'/form'}
+                onClick={() => this.handleClick('Form')}
+              >
                 Form
               </NavLink>
             </li>
