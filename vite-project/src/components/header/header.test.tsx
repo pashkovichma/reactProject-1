@@ -3,23 +3,23 @@ import Header from './header';
 import { MemoryRouter } from 'react-router-dom';
 
 describe('Header component', () => {
-  it('show main', () => {
+  it('show main url', () => {
     render(
       <MemoryRouter>
         <Header />
       </MemoryRouter>
     );
 
-    expect(screen.getByText(/Home/i)).toBeDefined();
+    expect(screen.getAllByText(/Home/i)).toBeDefined();
   });
 
-  it('show about us', () => {
+  it('show about us url', () => {
     render(
       <MemoryRouter>
         <Header />
       </MemoryRouter>
     );
 
-    expect(screen.getByText(/About us/i)).toBeDefined();
+    expect(screen.getAllByText(/About us/i)).toBeDefined();
   });
 });

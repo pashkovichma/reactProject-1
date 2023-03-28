@@ -1,6 +1,6 @@
 import React from 'react';
 import './form.css';
-import { IFormCard } from '../../types/interfaces';
+import { IFormCard } from '../../../types/interfaces';
 
 interface IFormProps {
   addFormCard: (key: IFormCard) => void;

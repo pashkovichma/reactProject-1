@@ -1,7 +1,7 @@
 import React from 'react';
-import { IFormCard, IFormCardPageProps, IFormCardPageState } from '../types/interfaces';
-import Form from '../components/form/form';
-import FormCard from '../components/formCard/formCard';
+import { IFormCard, IFormCardPageProps, IFormCardPageState } from '../../types/interfaces';
+import Form from './form/form';
+import FormCard from './formCard/formCard';
 
 class FormPage extends React.Component<IFormCardPageProps, IFormCardPageState> {
   constructor(props: IFormCardPageProps) {

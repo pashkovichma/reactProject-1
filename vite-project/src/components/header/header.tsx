@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink, useLinkClickHandler } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import './header.css';
 
 interface IHeaderState {

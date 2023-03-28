@@ -4,7 +4,7 @@ export interface IFormCard {
   date: string;
   country: string;
   gender: string;
-  photo: File;
+  photo: string;
   consent: boolean;
 }
 

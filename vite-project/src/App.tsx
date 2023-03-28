@@ -1,25 +1,28 @@
 import React from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
 
-import HomePage from './pages/HomePage';
-import AboutUsPage from './pages/AboutUSPage';
-import FormPage from './pages/FormPage';
-import NotFoundPage from './pages/NotFoundPage';
+import HomePage from './pages/HomePage/HomePage';
+import AboutUsPage from './pages/AboutUsPage/AboutUSPage';
+import FormPage from './pages/FormPage/FormPage';
+import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
 
-import Header from './components/header';
+import Header from './components/header/header';
 
 function App() {
   return (
-    <BrowserRouter>
-      <Header />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/aboutus" element={<AboutUsPage />} />
-        <Route path="/form" element={<FormPage />} />
-        <Route path="*" element={<NotFoundPage />} />
-      </Routes>
-    </BrowserRouter>
+    <Router>
+      <div>
+        <Header />
+        <hr />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/aboutus" element={<AboutUsPage />} />
+          <Route path="/form" element={<FormPage />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

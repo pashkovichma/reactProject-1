@@ -1,5 +1,5 @@
 import React from 'react';
-import { IFormCard } from '../../types/interfaces';
+import { IFormCard } from '../../../types/interfaces';
 
 class FormCard extends React.Component<IFormCard> {
   render() {

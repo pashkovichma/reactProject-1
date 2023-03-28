@@ -1,8 +1,8 @@
 function AboutUsPage() {
   return (
-    <main>
+    <div>
       <h1>About Us</h1>
-    </main>
+    </div>
   );
 }
 
