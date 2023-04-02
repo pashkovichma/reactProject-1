@@ -1,17 +1,17 @@
 import { ICarData } from 'data/data';
 import './card.css';
 
-function Card() {
+function Card(car: ICarData) {
   return (
     <div className="card">
-      <img className="card__image" src={img} alt={name} />
+      <img className="card__image" src={car.img} alt={car.name} />
       <div className="card__info">
-        <div className="card__name">{name}</div>
-        <div className="card__year">{year}</div>
-        <div className="card__color">{color}</div>
-        <div className="card__km">{km}</div>
-        <div className="card__price">{price}</div>
-        <div className="card__description">{description}</div>
+        <div className="card__name">{car.name}</div>
+        <div className="card__year">{car.year}</div>
+        <div className="card__color">{car.color}</div>
+        <div className="card__km">{car.km}</div>
+        <div className="card__price">{car.price}</div>
+        <div className="card__description">{car.description}</div>
       </div>
     </div>
   );

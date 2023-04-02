@@ -1,8 +1,9 @@
+import React, { Component } from 'react';
 import data from '../../../data/data';
 import Card from '../card/card';
 import './cardList.css';
 
-function CardList(data: ) {
+function CardList() {
   return (
     <div className="cards cards__list">
       {data.map((item) => {

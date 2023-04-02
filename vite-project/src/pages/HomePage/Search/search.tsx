@@ -1,45 +1,39 @@
-import React from 'react';
-//import './search.css';
+import React, { useState, useEffect, ChangeEvent } from 'react';
 
-class Search extends React.Component<{ text?: string }, { value: string }> {
-  constructor(props: { text?: string }) {
-    super(props);
-    this.state = { value: localStorage.getItem('searchValue') || '' };
-  }
+const LSName = 'searchValue';
 
-  componentWillUnmount = () => {
-    localStorage.setItem('searchValue', this.state.value);
+const getInitialValue = () => {
+  let val;
+  const LSValue = localStorage.getItem(LSName);
+  if (LSValue) {
+    val = LSValue;
+  } else val = '';
+  return val;
+};
+
+const Search = () => {
+  const [searchValue, setSearchValue] = useState<string>(() => getInitialValue());
+
+  const handleSearchChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const { value } = event.target;
+    setSearchValue(value);
   };
 
-  componentDidUpdate = () => {
-    localStorage.setItem('searchValue', this.state.value);
-  };
+  useEffect(() => {
+    localStorage.setItem(LSName, searchValue);
+  }, [searchValue]);
 
-  handleChange: React.ChangeEventHandler<HTMLInputElement> = (event) => {
-    this.setState({ value: event.target.value });
-  };
-
-  handleClearClick: React.MouseEventHandler<HTMLButtonElement> = () => {
-    this.setState({ value: '' });
-  };
-
-  render() {
-    return (
-      <div className="search">
-        <input
-          className="input search__input"
-          type="search"
-          value={this.state.value}
-          placeholder="..."
-          onChange={this.handleChange}
-        />
-        <button className="button search-button">search</button>
-        <button className="button clear-button" onClick={this.handleClearClick}>
-          clear
-        </button>
-      </div>
-    );
-  }
-}
+  return (
+    <div className="search">
+      <input
+        className="input search__input"
+        type="search"
+        value={searchValue}
+        placeholder="..."
+        onChange={handleSearchChange}
+      />
+    </div>
+  );
+};
 
 export default Search;
