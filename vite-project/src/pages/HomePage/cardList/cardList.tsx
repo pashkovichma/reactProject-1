@@ -1,4 +1,3 @@
-import React, { Component } from 'react';
 import data from '../../../data/data';
 import Card from '../card/card';
 import './cardList.css';
