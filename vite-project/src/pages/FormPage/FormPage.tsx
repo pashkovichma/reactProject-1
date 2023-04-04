@@ -16,7 +16,7 @@ function FormPage() {
       <Form addFormCard={onChangeItem} />
       <div className="form-cards">
         {items.map((card: IFormCard, index) => {
-          return <FormCard form={card} key={index}/>;
+          return <FormCard form={card} key={index} />;
         })}
       </div>
     </div>

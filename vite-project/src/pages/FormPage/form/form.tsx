@@ -70,7 +70,11 @@ function Form({ addFormCard }: IFormProps) {
             minLength: { value: 2, message: 'Please, enter at list 2 letters' },
           })}
         />
-        {errors.name && <p className="error-message">Please, enter name. At list 2 letters, the first is capital</p>}
+        {errors.name && (
+          <p className="error-message">
+            Please, enter name. At list 2 letters, the first is capital
+          </p>
+        )}
       </div>
       <div className="form-group__item">
         <label htmlFor="surnameInput" className="form-group__label">
@@ -89,7 +93,11 @@ function Form({ addFormCard }: IFormProps) {
             minLength: { value: 2, message: 'Please, enter at list 2 letters' },
           })}
         />
-        {errors.surname && <p className="error-message">Please, enter surname. At list 2 letters, the first is capital</p>}
+        {errors.surname && (
+          <p className="error-message">
+            Please, enter surname. At list 2 letters, the first is capital
+          </p>
+        )}
       </div>
       <div className="form-group__item">
         <label htmlFor="dateInput" className="form-group__label">
@@ -192,6 +200,7 @@ function Form({ addFormCard }: IFormProps) {
       <button className="form__button" type="submit">
         Submit
       </button>
+      {statusValid}
     </form>
   );
 }
