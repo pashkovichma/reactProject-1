@@ -3,12 +3,7 @@ import React, { useState, useEffect, ChangeEvent } from 'react';
 const LSName = 'searchValue';
 
 const getInitialValue = () => {
-  let val;
-  const LSValue = localStorage.getItem(LSName);
-  if (LSValue) {
-    val = LSValue;
-  } else val = '';
-  return val;
+  return localStorage.getItem(LSName) || '';
 };
 
 const Search = () => {
@@ -17,11 +12,8 @@ const Search = () => {
   const handleSearchChange = (event: ChangeEvent<HTMLInputElement>) => {
     const { value } = event.target;
     setSearchValue(value);
+    localStorage.setItem(LSName, value);
   };
-
-  useEffect(() => {
-    localStorage.setItem(LSName, searchValue);
-  }, [searchValue]);
 
   return (
     <div className="search">
