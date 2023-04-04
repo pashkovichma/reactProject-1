@@ -6,7 +6,7 @@ import HomePage from './pages/HomePage/HomePage';
 import AboutUsPage from './pages/AboutUsPage/AboutUSPage';
 import FormPage from './pages/FormPage/FormPage';
 import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
-
+import { Pathes } from './pathes/pathes-enum';
 import Header from './components/header/header';
 
 function App() {
@@ -16,10 +16,10 @@ function App() {
         <Header />
         <hr />
         <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/aboutus" element={<AboutUsPage />} />
-          <Route path="/form" element={<FormPage />} />
-          <Route path="*" element={<NotFoundPage />} />
+          <Route path={Pathes.Home} element={<HomePage />} />
+          <Route path={Pathes.About_Us} element={<AboutUsPage />} />
+          <Route path={Pathes.Form} element={<FormPage />} />
+          <Route path={Pathes.Not_Found} element={<NotFoundPage />} />
         </Routes>
       </div>
     </Router>
