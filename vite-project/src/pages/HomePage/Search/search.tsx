@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent } from 'react';
+import React, { useState, ChangeEvent, useRef, useEffect } from 'react';
 
 const LSName = 'searchValue';
 
@@ -9,10 +9,21 @@ const getInitialValue = () => {
 const Search = () => {
   const [searchValue, setSearchValue] = useState<string>(() => getInitialValue());
 
+  const searchValueRef = useRef('');
+
+  useEffect(() => {
+    return () => {
+      localStorage.setItem(LSName, searchValueRef.current || '');
+    };
+  }, []);
+
+  useEffect(() => {
+    searchValueRef.current = searchValue;
+  }, [searchValue]);
+
   const handleSearchChange = (event: ChangeEvent<HTMLInputElement>) => {
     const { value } = event.target;
     setSearchValue(value);
-    localStorage.setItem(LSName, value);
   };
 
   return (
