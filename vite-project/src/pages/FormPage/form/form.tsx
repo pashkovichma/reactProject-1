@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { FieldValues } from 'react-hook-form/dist/types';
 import { IFormCard } from '../../../types/interfaces';
+import './form.css';
 
 interface IFormProps {
   addFormCard: (key: IFormCard) => void;
@@ -27,6 +28,10 @@ function Form({ addFormCard }: IFormProps) {
     },
   });
 
+  const Confirmation = () => {
+    return <h2 className="confirmation">Card confirmed!</h2>;
+  };
+
   const handleClickSubmitButton = (inputData: FieldValues) => {
     setStatusValid(true);
     addFormCard({
@@ -41,7 +46,7 @@ function Form({ addFormCard }: IFormProps) {
     reset();
     setTimeout(() => {
       setStatusValid(false);
-    }, 10000);
+    }, 2000);
   };
 
   const validDate = (value: string) => {
@@ -200,7 +205,7 @@ function Form({ addFormCard }: IFormProps) {
       <button className="form__button" type="submit">
         Submit
       </button>
-      {statusValid}
+      {statusValid && <Confirmation />}
     </form>
   );
 }
