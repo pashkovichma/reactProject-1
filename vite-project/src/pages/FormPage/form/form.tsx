@@ -26,6 +26,8 @@ function Form({ addFormCard }: IFormProps) {
       photo: '',
       consent: false,
     },
+    mode: 'onSubmit',
+    reValidateMode: 'onSubmit',
   });
 
   const Confirmation = () => {
@@ -68,14 +70,11 @@ function Form({ addFormCard }: IFormProps) {
           type="text"
           {...register('name', {
             required: 'your name',
-            pattern: {
-              value: /^[A-ZА-Я]{1,}.*$/,
-              message: 'Please, enter the first letter capital',
-            },
+            pattern: /^[A-ZА-Я]{1,}.*$/,
             minLength: { value: 2, message: 'Please, enter at list 2 letters' },
           })}
         />
-        {errors.name && (
+        {errors?.name && (
           <p className="error-message">
             Please, enter name. At list 2 letters, the first is capital
           </p>
