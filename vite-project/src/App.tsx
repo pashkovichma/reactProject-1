@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { Navigate, createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
 
 import HomePage from './pages/HomePage/HomePage';
@@ -10,20 +10,50 @@ import { Pathes } from './pathes/pathes-enum';
 import Header from './components/header/header';
 
 function App() {
-  return (
-    <Router>
-      <div>
-        <Header />
-        <hr />
-        <Routes>
-          <Route path={Pathes.Home} element={<HomePage />} />
-          <Route path={Pathes.About_Us} element={<AboutUsPage />} />
-          <Route path={Pathes.Form} element={<FormPage />} />
-          <Route path={Pathes.Not_Found} element={<NotFoundPage />} />
-        </Routes>
-      </div>
-    </Router>
-  );
+  const router = createBrowserRouter([
+    {
+      path: '/',
+      element: <Header />,
+      children: [
+        {
+          index: true,
+          element: <Navigate to={Pathes.Home} replace />,
+        },
+        {
+          path: Pathes.Home,
+          element: <HomePage />,
+        },
+        {
+          path: Pathes.About_Us,
+          element: <AboutUsPage />,
+        },
+        {
+          path: Pathes.Form,
+          element: <FormPage />,
+        },
+      ],
+    },
+    {
+      path: '/*',
+      element: <NotFoundPage />,
+    },
+  ]);
+  return <RouterProvider router={router} />;
+  // <BrowserRouter>
+  //   <div>
+  //     <Header />
+  //     <hr />
+  //     <Routes>
+  //       <Route index element={<Navigate to={Pathes.Home} />}></Route>
+  //       <Route path={Pathes.Home} element={<HomePage />}></Route>
+  //       <Route path={Pathes.About_Us} element={<AboutUsPage />}></Route>
+  //       <Route path={Pathes.Form} element={<FormPage />}></Route>
+  //       <Route path={Pathes.Not_Found} element={<Navigate to={Pathes.NotFound} />}></Route>
+  //       <Route path={Pathes.NotFound} element={<NotFoundPage />}></Route>
+  //     </Routes>
+  //   </div>
+  // </BrowserRouter>
+  //);
 }
 
 export default App;
