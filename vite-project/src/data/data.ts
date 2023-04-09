@@ -1,13 +1,4 @@
-export interface ICarData {
-  id?: number;
-  name: string;
-  year: number;
-  color: string;
-  km: number;
-  img: string;
-  price: number;
-  description: string;
-}
+import { ICarData } from '../types/interfaces';
 
 const data: ICarData[] = [
   {

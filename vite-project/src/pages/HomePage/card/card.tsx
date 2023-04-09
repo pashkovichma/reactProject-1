@@ -1,4 +1,4 @@
-import { ICarData } from 'data/data';
+import { ICarData } from '../../../types/interfaces';
 import './card.css';
 
 function Card(car: ICarData) {
