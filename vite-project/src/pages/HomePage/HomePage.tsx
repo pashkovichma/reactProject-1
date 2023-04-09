@@ -1,13 +1,13 @@
 import CardList from './cardList/cardList';
 import Search from './Search/search';
 
-function HomePage() {
+const HomePage = () => {
   return (
     <div>
       <Search />
       <CardList />
     </div>
   );
-}
+};
 
 export default HomePage;

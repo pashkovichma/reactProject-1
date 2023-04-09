@@ -1,51 +1,26 @@
-import React from 'react';
-import { IFormCard, IFormCardPageProps, IFormCardPageState } from '../../types/interfaces';
+import { useState } from 'react';
+import { IFormCard } from '../../types/interfaces';
 import Form from './form/form';
 import FormCard from './formCard/formCard';
 
-class FormPage extends React.Component<IFormCardPageProps, IFormCardPageState> {
-  constructor(props: IFormCardPageProps) {
-    super(props);
-    this.state = {
-      formCards: [],
-      isCardHidden: true,
-    };
-  }
+function FormPage() {
+  const [items, setItems] = useState<IFormCard[]>([]);
 
-  addFormCard = (formCard: IFormCard): void => {
-    const formCards = [...this.state.formCards, formCard];
-    this.setState({ formCards, isCardHidden: false });
-
-    setTimeout(() => {
-      this.setState({ isCardHidden: true });
-    }, 10000);
+  const onChangeItem = (newItem: IFormCard) => {
+    setItems([...items, newItem]);
   };
 
-  render() {
-    return (
-      <main>
-        <h2>Form page</h2>
-        <Form addFormCard={this.addFormCard} />
-        <h2 hidden={this.state.isCardHidden}>Card added</h2>
-        <div className="form-cards">
-          {this.state.formCards.map((card, index) => {
-            return (
-              <FormCard
-                key={index}
-                name={card.name}
-                surname={card.surname}
-                date={card.date}
-                country={card.country}
-                gender={card.gender}
-                photo={card.photo}
-                consent={card.consent}
-              />
-            );
-          })}
-        </div>
-      </main>
-    );
-  }
+  return (
+    <div>
+      <h2>Fill the form</h2>
+      <Form addFormCard={onChangeItem} />
+      <div className="form-cards">
+        {items.map((card: IFormCard, index) => {
+          return <FormCard form={card} key={index} />;
+        })}
+      </div>
+    </div>
+  );
 }
 
 export default FormPage;

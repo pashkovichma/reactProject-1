@@ -1,73 +1,39 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation, Outlet } from 'react-router-dom';
 import './header.css';
+import { Pathes } from '../../pathes/pathes-enum';
 
-interface IHeaderState {
-  namePage: string;
-}
-
-export class Header extends React.Component<Record<string, never>, IHeaderState> {
-  constructor(props: Record<string, never>) {
-    super(props);
-
-    let name = '';
-    switch (window.location.pathname) {
-      case '/':
-        name = 'Home';
-        break;
-      case '/aboutus':
-        name = 'About Us';
-      case '/form':
-        name = 'Form';
-        break;
-    }
-
-    this.state = {
-      namePage: name,
-    };
-  }
-
-  handleClick(name: string) {
-    this.setState({ namePage: name });
-  }
-
-  render() {
-    return (
+const Header: React.FC = () => {
+  const location = useLocation();
+  return (
+    <>
       <header className="header">
         <nav className="header__navigation">
-          <h2 className="current-page">{this.state.namePage}</h2>
           <ul className="navigation__list">
+            <li className="navigation__item">current page: {location.pathname.slice(1)}</li>
             <li className="navigation__item">
-              <NavLink
-                className="navigation__link"
-                to={'/'}
-                onClick={() => this.handleClick('Home')}
-              >
+              <NavLink className="navigation__link" to={Pathes.Home}>
                 Home
               </NavLink>
             </li>
             <li className="navigation__item">
-              <NavLink
-                className="navigation__link"
-                to={'/aboutus'}
-                onClick={() => this.handleClick('About us')}
-              >
+              <NavLink className="navigation__link" to={Pathes.About_Us}>
                 About us
               </NavLink>
             </li>
             <li className="navigation__item">
-              <NavLink
-                className="navigation__link"
-                to={'/form'}
-                onClick={() => this.handleClick('Form')}
-              >
+              <NavLink className="navigation__link" to={Pathes.Form}>
                 Form
               </NavLink>
             </li>
           </ul>
         </nav>
       </header>
-    );
-  }
-}
+      <main className="container">
+        <Outlet />
+      </main>
+    </>
+  );
+};
+
 export default Header;

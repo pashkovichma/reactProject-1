@@ -7,7 +7,7 @@ describe('Page Form', () => {
     render(<FormPage />);
     expect(
       screen.getByRole('heading', {
-        name: 'Form page',
+        name: new RegExp('Fill the form', 'i'),
       })
     );
   });
