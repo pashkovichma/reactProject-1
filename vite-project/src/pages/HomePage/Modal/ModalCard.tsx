@@ -10,7 +10,7 @@ export const ModalCard = ({ card }: IProps) => {
   const result = card ? (
     <div className="container">
       <img className="img" src={card.urls.regular} alt="picture" />
-      <div className="card__name">Made by: {card.user}</div>
+      <div className="card__name">Made by: {card.user.name}</div>
       <div className="card__likes">likes: {card.likes}</div>
       <div className="card__description">{card.description}</div>
     </div>

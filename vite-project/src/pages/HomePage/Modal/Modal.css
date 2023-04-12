@@ -11,6 +11,10 @@
   opacity: 0;
   visibility: hidden;
   position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 10;
   -webkit-transition: all .5s;
@@ -54,4 +58,4 @@
 .img {
   max-width: 600px;
 }
-/*# sourceMappingURL=Modal.css.map */
+/*# sourceMappingURL=modal.css.map */
