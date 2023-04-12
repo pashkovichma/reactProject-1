@@ -1,26 +1,24 @@
-import data from '../../../data/data';
 import Card from '../card/card';
 import './cardList.css';
+import { ICar } from '../../../types/interfaces';
+import { NotFound } from '../../HomePage/Modal/NotFound';
+import { MyLoader } from '../MyLoader/MyLoader';
 
-function CardList() {
-  return (
-    <div className="cards cards__list">
-      {data.map((item) => {
-        return (
-          <Card
-            key={item.id}
-            name={item.name}
-            year={item.year}
-            color={item.color}
-            km={item.km}
-            img={item.img}
-            price={item.price}
-            description={item.description}
-          />
-        );
-      })}
-    </div>
-  );
+interface IProps {
+  list: ICar[];
+  isLoading: boolean;
+  setCard: (card: ICar) => void;
 }
 
-export default CardList;
+export const CardList = ({ list, isLoading, setCard }: IProps) => {
+  //return <NotFound />;
+  if (isLoading) return <MyLoader />;
+  if (!list.length) return <NotFound />;
+  return (
+    <div className="cards cards__list">
+      {list.map((item) => (
+        <Card picture={item} key={item.id} setCard={() => setCard(item)} />
+      ))}
+    </div>
+  );
+};

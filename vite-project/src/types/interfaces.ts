@@ -31,5 +31,22 @@ export interface ICarData {
 export interface IResult {
   total: number;
   total_pages: number;
-  results: ICarData;
+  results: ICarData[];
+}
+
+interface IUrls {
+  [key: string]: string;
+}
+
+interface IUser {
+  name: string;
+  [key: string]: unknown;
+}
+
+export interface ICar {
+  id: string;
+  urls: IUrls;
+  likes: number;
+  description: string;
+  user: IUser;
 }
