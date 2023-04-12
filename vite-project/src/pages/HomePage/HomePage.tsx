@@ -12,11 +12,11 @@
 
 // export default HomePage;
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { ICar } from '../../types/interfaces';
 import { CardList } from './cardList/cardList';
 import { Modal } from './Modal/Modal';
-import Search from './Search/search';
+import SearchInput from './Search/search';
 import { ModalCard } from './Modal/ModalCard';
 import Unsplash from '../../API/Unsplash';
 import { useFetching } from './useFetching';
@@ -46,17 +46,31 @@ const HomePage = () => {
   const { fetching, isLoading } = useFetching(setFetchList);
 
   useEffect(() => {
-    const value = localStorage.getItem('value') || '';
+    const value = localStorage.getItem('inputValue') || '';
     setSearch(value);
     fetching(value);
   }, []);
+
+  const useSetLS = (key: string, value: string) => {
+    const setValue = useRef(value);
+    useEffect(() => {
+      return () => {
+        localStorage.setItem(key, setValue.current);
+      };
+    }, [key]);
+    useEffect(() => {
+      setValue.current = value;
+    }, [value]);
+  };
+
+  useSetLS('inputValue', search);
 
   const handleSearch = async (str: string) => {
     setSearch(str);
     await fetching(str);
   };
 
-  //const handleWithinDebounce = useDebounce(handleSearch);
+  const handleWithinDebounce = useDebounce(handleSearch);
 
   const hanleCardClick = (card: ICar) => {
     setModal(card);
@@ -68,7 +82,7 @@ const HomePage = () => {
       <Modal visible={visible} setVisible={setVisible}>
         <ModalCard card={modal} />
       </Modal>
-      <Search />
+      <SearchInput setSearch={handleWithinDebounce} value={search} />
       <CardList list={list} isLoading={isLoading} setCard={hanleCardClick} />
     </div>
   );

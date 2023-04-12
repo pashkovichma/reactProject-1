@@ -31,7 +31,7 @@ export interface ICarData {
 export interface IResult {
   total: number;
   total_pages: number;
-  results: ICarData[];
+  results: ICar[];
 }
 
 interface IUrls {
