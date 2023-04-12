@@ -11,7 +11,6 @@ interface IProps {
 }
 
 export const CardList = ({ list, isLoading, setCard }: IProps) => {
-  //return <NotFound />;
   if (isLoading) return <MyLoader />;
   if (!list.length) return <NotFound />;
   return (

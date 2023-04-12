@@ -12,7 +12,7 @@
 
 // export default HomePage;
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { ICar } from '../../types/interfaces';
 import { CardList } from './cardList/cardList';
 import { Modal } from './Modal/Modal';
@@ -20,6 +20,7 @@ import SearchInput from './Search/search';
 import { ModalCard } from './Modal/ModalCard';
 import Unsplash from '../../API/Unsplash';
 import { useFetching } from './useFetching';
+import { useSetLS } from './useSetls';
 
 const HomePage = () => {
   const [visible, setVisible] = useState(false);
@@ -49,19 +50,8 @@ const HomePage = () => {
     const value = localStorage.getItem('inputValue') || '';
     setSearch(value);
     fetching(value);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  const useSetLS = (key: string, value: string) => {
-    const setValue = useRef(value);
-    useEffect(() => {
-      return () => {
-        localStorage.setItem(key, setValue.current);
-      };
-    }, [key]);
-    useEffect(() => {
-      setValue.current = value;
-    }, [value]);
-  };
 
   useSetLS('inputValue', search);
 

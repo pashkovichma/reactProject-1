@@ -1,4 +1,3 @@
-const LSName = 'searchValue';
 interface IProps {
   setSearch: (str: string) => void;
   value?: string;
