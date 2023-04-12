@@ -1,27 +1,11 @@
 import Card from './card';
-import data from '../../../data/data';
 import { render, screen } from '@testing-library/react';
+import { mockSetCard, mockCard } from './mock';
 
 describe('Card', () => {
   it('renders card', () => {
-    const { name, year, color, km, img, price, description } = data[0];
-    render(
-      <Card
-        name={name}
-        year={year}
-        color={color}
-        km={km}
-        img={img}
-        price={price}
-        description={description}
-      />
-    );
+    render(<Card setCard={mockSetCard} picture={mockCard} />);
 
-    expect(screen.getByText(`${name}`)).toBeDefined();
-    expect(screen.getByText(`${year}`)).toBeDefined();
-    expect(screen.getByText(`${color}`)).toBeDefined();
-    expect(screen.getByText(`${km}`)).toBeDefined();
-    expect(screen.getByText(`${price}`)).toBeDefined();
-    expect(screen.getByText(`${description}`)).toBeDefined();
+    expect(screen.getByText(`a`)).toBeInTheDocument;
   });
 });

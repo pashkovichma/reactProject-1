@@ -1,20 +1,20 @@
-import { ICarData } from 'data/data';
+import { ICar } from '../../../types/interfaces';
 import './card.css';
+import { MyButton } from '../MyButton/MyButton';
 
-function Card(car: ICarData) {
+interface IProps {
+  picture: ICar;
+  setCard: (card: ICar) => void;
+}
+
+export const Card = ({ picture, setCard }: IProps) => {
   return (
     <div className="card">
-      <img className="card__image" src={car.img} alt={car.name} />
-      <div className="card__info">
-        <div className="card__name">{car.name}</div>
-        <div className="card__year">{car.year}</div>
-        <div className="card__color">{car.color}</div>
-        <div className="card__km">{car.km}</div>
-        <div className="card__price">{car.price}</div>
-        <div className="card__description">{car.description}</div>
-      </div>
+      <img className="card__image" src={picture.urls.small} alt="picture" />
+      <div>{picture.user.name}</div>
+      <MyButton onClick={setCard}>Show more</MyButton>
     </div>
   );
-}
+};
 
 export default Card;

@@ -1,42 +1,45 @@
-import React, { useState, ChangeEvent, useRef, useEffect } from 'react';
+interface IProps {
+  setSearch: (str: string) => void;
+  value?: string;
+  [key: string]: unknown;
+}
 
-const LSName = 'searchValue';
+// const getInitialValue = () => {
+//   return localStorage.getItem(LSName) || '';
+// };
 
-const getInitialValue = () => {
-  return localStorage.getItem(LSName) || '';
-};
+const SearchInput = ({ setSearch, value }: IProps) => {
+  // const [searchValue, setSearchValue] = useState<string>(() => getInitialValue());
 
-const Search = () => {
-  const [searchValue, setSearchValue] = useState<string>(() => getInitialValue());
+  // const searchValueRef = useRef('');
 
-  const searchValueRef = useRef('');
+  // useEffect(() => {
+  //   return () => {
+  //     localStorage.setItem(LSName, searchValueRef.current || '');
+  //   };
+  // }, []);
 
-  useEffect(() => {
-    return () => {
-      localStorage.setItem(LSName, searchValueRef.current || '');
-    };
-  }, []);
+  // useEffect(() => {
+  //   searchValueRef.current = searchValue;
+  // }, [searchValue]);
 
-  useEffect(() => {
-    searchValueRef.current = searchValue;
-  }, [searchValue]);
-
-  const handleSearchChange = (event: ChangeEvent<HTMLInputElement>) => {
-    const { value } = event.target;
-    setSearchValue(value);
-  };
+  // const handleSearchChange = (event: ChangeEvent<HTMLInputElement>) => {
+  //   const { value } = event.target;
+  //   setSearchValue(value);
+  // };
 
   return (
     <div className="search">
       <input
         className="input search__input"
-        type="search"
-        value={searchValue}
+        type="text"
+        //value={searchValue}
         placeholder="..."
-        onChange={handleSearchChange}
+        onChange={(event) => setSearch(event.target.value)}
+        defaultValue={value}
       />
     </div>
   );
 };
 
-export default Search;
+export default SearchInput;
