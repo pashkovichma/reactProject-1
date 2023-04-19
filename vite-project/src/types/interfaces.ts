@@ -50,3 +50,21 @@ export interface ICar {
   description: string;
   user: IUser;
 }
+
+export interface ICardsState {
+  search: string;
+  cards: ICar[];
+  isLoading: boolean;
+  error: string;
+  modal: ICar | null;
+  isVisible: boolean;
+}
+
+export interface ICard {
+  id: string;
+  user: IUser;
+  urls: IUrls;
+  likes: number;
+  description: string;
+  created_at: string;
+}

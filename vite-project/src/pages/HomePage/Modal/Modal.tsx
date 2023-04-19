@@ -1,26 +1,34 @@
 import CloseModal from './CloseModal';
 import './Modal.scss';
+import { useSearchPhotoByIdQuery } from '../../../store/apiSlice';
 
 interface IProps {
-  visible: boolean;
-  setVisible: React.Dispatch<React.SetStateAction<boolean>>;
-  children: JSX.Element | JSX.Element[];
+  cardVisible: string;
+  setModalVisible: (text: boolean) => void;
 }
 
-export const Modal = ({ children, visible, setVisible }: IProps) => {
-  const styleClass = ['modal'];
-  if (visible) {
-    styleClass.push('active');
-  }
+export function Modal({ cardVisible, setModalVisible }: IProps) {
+  const { data } = useSearchPhotoByIdQuery(cardVisible);
+
+  const hanldeClick = () => {
+    setModalVisible(false);
+  };
 
   return (
-    <div className={styleClass.join(' ')} onClick={() => setVisible(false)}>
-      <div className="content" onClick={(e) => e.stopPropagation()}>
-        {children}
-        <span className="close" onClick={() => setVisible(false)}>
+    <div className="modal">
+      <div className="content">
+        <div className="container">
+          <img className="img" src={data?.urls.regular} alt="picture" />
+          <div className="card__user">Made by: {data?.user.name}</div>
+          <div className="card__likes">likes: {data?.likes}</div>
+          <div className="card__created">likes: {data?.created_at}</div>
+          <div className="card__description">{data?.description}</div>
+        </div>
+        <span className="close" onClick={hanldeClick}>
           <CloseModal />
         </span>
       </div>
+      <div className="back"></div>
     </div>
   );
-};
+}
