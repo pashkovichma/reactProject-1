@@ -1,45 +1,40 @@
-interface IProps {
-  setSearch: (str: string) => void;
-  value?: string;
-  [key: string]: unknown;
-}
+import { useState } from 'react';
+import { setQuery } from '../../../store/searchSlice';
+import { useAppSelector, useAppDispatch } from '../../../store/hooks/redux';
 
-// const getInitialValue = () => {
-//   return localStorage.getItem(LSName) || '';
-// };
+function SearchInput() {
+  const dispatch = useAppDispatch();
+  const query = useAppSelector((state) => state.search.query);
+  const [searchBarValue, setSearchBarValue] = useState(query);
+  const handleChange: React.ChangeEventHandler<HTMLInputElement> = (event) => {
+    setSearchBarValue(event.target.value);
+  };
 
-const SearchInput = ({ setSearch, value }: IProps) => {
-  // const [searchValue, setSearchValue] = useState<string>(() => getInitialValue());
+  const handleClearClick: React.MouseEventHandler<HTMLButtonElement> = (event) => {
+    event.preventDefault();
+    setSearchBarValue('');
+  };
 
-  // const searchValueRef = useRef('');
-
-  // useEffect(() => {
-  //   return () => {
-  //     localStorage.setItem(LSName, searchValueRef.current || '');
-  //   };
-  // }, []);
-
-  // useEffect(() => {
-  //   searchValueRef.current = searchValue;
-  // }, [searchValue]);
-
-  // const handleSearchChange = (event: ChangeEvent<HTMLInputElement>) => {
-  //   const { value } = event.target;
-  //   setSearchValue(value);
-  // };
+  const handleFormSubmit: React.FormEventHandler<HTMLFormElement> = (event) => {
+    event.preventDefault();
+    dispatch(setQuery(searchBarValue));
+  };
 
   return (
-    <div className="search">
+    <form className="search" onSubmit={handleFormSubmit}>
       <input
         className="input search__input"
-        type="text"
-        //value={searchValue}
+        type="search"
+        value={searchBarValue}
         placeholder="..."
-        onChange={(event) => setSearch(event.target.value)}
-        defaultValue={value}
+        onChange={handleChange}
       />
-    </div>
+      <button className="button search-button">search</button>
+      <button className="button clear-button" onClick={handleClearClick}>
+        clear
+      </button>
+    </form>
   );
-};
+}
 
 export default SearchInput;

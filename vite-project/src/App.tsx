@@ -1,4 +1,3 @@
-import React from 'react';
 import { Navigate, createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
 
@@ -39,21 +38,6 @@ function App() {
     },
   ]);
   return <RouterProvider router={router} />;
-  // <BrowserRouter>
-  //   <div>
-  //     <Header />
-  //     <hr />
-  //     <Routes>
-  //       <Route index element={<Navigate to={Pathes.Home} />}></Route>
-  //       <Route path={Pathes.Home} element={<HomePage />}></Route>
-  //       <Route path={Pathes.About_Us} element={<AboutUsPage />}></Route>
-  //       <Route path={Pathes.Form} element={<FormPage />}></Route>
-  //       <Route path={Pathes.Not_Found} element={<Navigate to={Pathes.NotFound} />}></Route>
-  //       <Route path={Pathes.NotFound} element={<NotFoundPage />}></Route>
-  //     </Routes>
-  //   </div>
-  // </BrowserRouter>
-  //);
 }
 
 export default App;
