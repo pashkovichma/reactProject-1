@@ -1,4 +1,4 @@
-import { Navigate, createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { Routes, Route, Navigate, createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
 
 import HomePage from './pages/HomePage/HomePage';
@@ -9,35 +9,18 @@ import { Pathes } from './pathes/pathes-enum';
 import Header from './components/header/header';
 
 function App() {
-  const router = createBrowserRouter([
-    {
-      path: '/',
-      element: <Header />,
-      children: [
-        {
-          index: true,
-          element: <Navigate to={Pathes.Home} replace />,
-        },
-        {
-          path: Pathes.Home,
-          element: <HomePage />,
-        },
-        {
-          path: Pathes.About_Us,
-          element: <AboutUsPage />,
-        },
-        {
-          path: Pathes.Form,
-          element: <FormPage />,
-        },
-      ],
-    },
-    {
-      path: '/*',
-      element: <NotFoundPage />,
-    },
-  ]);
-  return <RouterProvider router={router} />;
+  return (
+    <>
+      <Header />
+      <Routes>
+        <Route path={Pathes.Home} element={<HomePage />}></Route>
+        <Route path={Pathes.About_Us} element={<AboutUsPage />}></Route>
+        <Route path={Pathes.Form} element={<FormPage />}></Route>
+        <Route path={Pathes.NotFound} element={<NotFoundPage />}></Route>
+        <Route path={Pathes.Not_Found} element={<Navigate to={Pathes.NotFound} />}></Route>
+      </Routes>
+    </>
+  );
 }
 
 export default App;

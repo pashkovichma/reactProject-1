@@ -1,8 +1,14 @@
+import './MyButton.css';
+
 interface IProps {
   children: string;
   [key: string]: unknown;
 }
 
 export const MyButton = ({ children, ...props }: IProps) => {
-  return <button {...props}>{children}</button>;
+  return (
+    <button className="show__button" {...props}>
+      {children}
+    </button>
+  );
 };

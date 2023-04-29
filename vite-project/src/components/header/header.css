@@ -4,7 +4,7 @@
     justify-content: space-between;
 }
 
-.navigation__item:hover {
+.navigation__item:not(:first-child) :hover {
     text-decoration: underline;
 }
 

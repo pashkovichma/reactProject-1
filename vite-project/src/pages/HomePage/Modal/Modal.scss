@@ -2,31 +2,24 @@
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-25%, -25%);
-  width: 50vw;
-  height: 50vh;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 10;
-  transition: all .5s;
-
+  z-index: 4;
 }
 
-  .active {
-    opacity: 1;
-    visibility: visible;
-  }
-  
-.content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: white;
+.active {
+  opacity: 1;
+  visibility: visible;
 }
 
 .close {
   position: absolute;
+  top: 20px;
+  right: 20px;
   cursor: pointer;
   opacity: 0.9;
   transition: all 0.5s;
@@ -38,21 +31,34 @@
   }
 }
 
-.contatiner {
+.content {
+  position: relative;
   display: flex;
-  flex-direction: coulumn;
-  gap: 10px;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 15px;
   max-width: 600px;
+  width: 100%;
+  z-index: 4;
+}
+
+.contatiner {
+  background-color: #fff;
+  width: 200px;
+  height: 150px;
 }
 
 .img {
-  max-width: 600px;
+  max-height: 50vh;
 }
 
 .back {
-  position: apsolute;
+  position: absolute;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
-  z-index: 9;
+  z-index: 3;
+  cursor: pointer;
 }

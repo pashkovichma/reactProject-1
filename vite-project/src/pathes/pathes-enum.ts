@@ -1,5 +1,5 @@
 enum Pathes {
-  Home = '/home',
+  Home = '/',
   About_Us = '/about',
   Form = '/form',
   NotFound = '/404',

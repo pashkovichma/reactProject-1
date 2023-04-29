@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { setQuery } from '../../../store/searchSlice';
 import { useAppSelector, useAppDispatch } from '../../../store/hooks/redux';
+import './search.css';
 
 function SearchInput() {
   const dispatch = useAppDispatch();

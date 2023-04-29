@@ -1,28 +1,59 @@
-import React from 'react';
-import { NavLink, useLocation, Outlet } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { NavLink, Outlet } from 'react-router-dom';
 import './header.css';
 import { Pathes } from '../../pathes/pathes-enum';
 
-const Header: React.FC = () => {
-  const location = useLocation();
+function Header() {
+  const [namePage, setNamePage] = useState('');
+
+  useEffect(() => {
+    switch (window.location.pathname) {
+      case '/':
+        setNamePage('Home');
+        break;
+      case '/about':
+        setNamePage('About Us');
+        break;
+      case '/form':
+        setNamePage('Form');
+        break;
+    }
+  }, []);
+
+  const handleClick = (name: string) => {
+    setNamePage(name);
+  };
+
   return (
     <>
       <header className="header">
         <nav className="header__navigation">
           <ul className="navigation__list">
-            <li className="navigation__item">current page: {location.pathname.slice(1)}</li>
+            <li className="navigation__item">current page: {namePage}</li>
             <li className="navigation__item">
-              <NavLink className="navigation__link" to={Pathes.Home}>
+              <NavLink
+                className="navigation__link"
+                to={Pathes.Home}
+                onClick={() => handleClick('Home')}
+              >
                 Home
               </NavLink>
             </li>
             <li className="navigation__item">
-              <NavLink className="navigation__link" to={Pathes.About_Us}>
+              <NavLink
+                className="navigation__link"
+                to={Pathes.About_Us}
+                onClick={() => handleClick('About')}
+              >
                 About us
               </NavLink>
             </li>
             <li className="navigation__item">
-              <NavLink className="navigation__link" to={Pathes.Form}>
+              <NavLink
+                className="navigation__link"
+                to={Pathes.Form}
+                onClick={() => handleClick('Form')}
+              >
                 Form
               </NavLink>
             </li>
@@ -34,6 +65,6 @@ const Header: React.FC = () => {
       </main>
     </>
   );
-};
+}
 
 export default Header;
