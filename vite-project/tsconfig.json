@@ -1,9 +1,9 @@
 {
   "compilerOptions": {
-    "target": "esnext",
-    "lib": ["dom", "esnext", "dom.iterable"],
+    "target": "ESNext",
+    "lib": ["dom", "ESNext", "dom.iterable"],
     "jsx": "react-jsx",
-    "module": "esnext",
+    "module": "ESNext",
     "moduleResolution": "node",
     "noImplicitAny": true,
     "noFallthroughCasesInSwitch": true,
@@ -15,12 +15,21 @@
     "baseUrl": "./src",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true
+    "noEmit": true,
+    "useDefineForClassFields": true,
   },
   "include": [
     "vite.config.ts",
     "./src/**/*",
     "styled.d.ts",
-    ".eslintrc.cjs"
-    ]
+    ".eslintrc.cjs",
+     "server.ts"
+    ],
+  "exclude": [
+    "node_modules",
+    "cypress/fixtures",
+    "cypress/support"
+  ],
+  "references": [{ "path": "./tsconfig.node.json" }],
+  "ts-node": { "esm": true, "experimentalSpecifierResolution": "node"}
 }
