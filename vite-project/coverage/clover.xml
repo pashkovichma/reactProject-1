@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1683060365699" clover="3.2.0">
+  <project timestamp="1683060365699" name="All files">
+    <metrics statements="143" coveredstatements="115" conditionals="46" coveredconditionals="41" methods="55" coveredmethods="36" elements="244" coveredelements="192" complexity="0" loc="143" ncloc="143" packages="17" files="23" classes="23"/>
+    <package name="src">
+      <metrics statements="5" coveredstatements="5" conditionals="1" coveredconditionals="1" methods="2" coveredmethods="2"/>
+      <file name="App.tsx" path="/Users/maria/Desktop/reactProject/reactProject-1/vite-project/src/App.tsx">
+        <metrics statements="4" coveredstatements="4" conditionals="1" coveredconditionals="1" methods="2" coveredmethods="2"/>
+        <line num="1" count="210" type="cond" truecount="1" falsecount="0"/>
+        <line num="12" count="60" type="stmt"/>
+        <line num="24" count="30" type="stmt"/>
+        <line num="26" count="30" type="stmt"/>
+      </file>
+      <file name="entry-client.tsx" path="/Users/maria/Desktop/reactProject/reactProject-1/vite-project/src/entry-client.tsx">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="9" count="30" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.components.header">
+      <metrics statements="18" coveredstatements="14" conditionals="3" coveredconditionals="3" methods="6" coveredmethods="2"/>
+      <file name="header.tsx" path="/Users/maria/Desktop/reactProject/reactProject-1/vite-project/src/components/header/header.tsx">
+        <metrics statements="18" coveredstatements="14" conditionals="3" coveredconditionals="3" methods="6" coveredmethods="2"/>
+        <line num="6" count="104" type="stmt"/>
+        <line num="7" count="104" type="stmt"/>
+        <line num="9" count="104" type="stmt"/>
+        <line num="10" count="56" type="cond" truecount="3" falsecount="0"/>
+        <line num="12" count="24" type="stmt"/>
+        <line num="13" count="24" type="stmt"/>
+        <line num="15" count="8" type="stmt"/>
+        <line num="16" count="8" type="stmt"/>
+        <line num="18" count="12" type="stmt"/>
+        <line num="19" count="12" type="stmt"/>
+        <line num="23" count="104" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="27" count="104" type="stmt"/>
+        <line num="37" count="0" type="stmt"/>
+        <line num="46" count="0" type="stmt"/>
+        <line num="55" count="0" type="stmt"/>
+        <line num="68" count="30" type="stmt"/>
+        <line num="70" count="30" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.pages.AboutUsPage">
+      <metrics statements="4" coveredstatements="4" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+      <file name="AboutUSPage.tsx" path="/Users/maria/Desktop/reactProject/reactProject-1/vite-project/src/pages/AboutUsPage/AboutUSPage.tsx">
+        <metrics statements="4" coveredstatements="4" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="1" count="210" type="cond" truecount="1" falsecount="0"/>
+        <line num="2" count="12" type="stmt"/>
+        <line num="7" count="30" type="stmt"/>
+        <line num="9" count="30" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.pages.FormPage">
+      <metrics statements="8" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="1"/>
+      <file name="FormPage.tsx" path="/Users/maria/Desktop/reactProject/reactProject-1/vite-project/src/pages/FormPage/FormPage.tsx">
+        <metrics statements="8" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="1"/>
+        <line num="6" count="30" type="stmt"/>
+        <line num="7" count="12" type="stmt"/>
+        <line num="9" count="12" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="13" count="12" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="24" count="30" type="stmt"/>
+        <line num="26" count="30" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.pages.FormPage.form">
+      <metrics statements="19" coveredstatements="9" conditionals="18" coveredconditionals="15" methods="7" coveredmethods="2"/>
+      <file name="form.tsx" path="/Users/maria/Desktop/reactProject/reactProject-1/vite-project/src/pages/FormPage/form/form.tsx">
+        <metrics statements="19" coveredstatements="9" conditionals="18" coveredconditionals="15" methods="7" coveredmethods="2"/>
+        <line num="11" count="24" type="stmt"/>
+        <line num="12" count="24" type="stmt"/>
+        <line num="19" count="30" type="stmt"/>
+        <line num="33" count="24" type="stmt"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="37" count="24" type="stmt"/>
+        <line num="38" count="0" type="stmt"/>
+        <line num="39" count="0" type="stmt"/>
+        <line num="48" count="0" type="stmt"/>
+        <line num="49" count="0" type="stmt"/>
+        <line num="50" count="0" type="stmt"/>
+        <line num="54" count="24" type="stmt"/>
+        <line num="55" count="0" type="stmt"/>
+        <line num="56" count="0" type="stmt"/>
+        <line num="58" count="0" type="stmt"/>
+        <line num="61" count="24" type="stmt"/>
+        <line num="117" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="210" count="30" type="stmt"/>
+        <line num="212" count="30" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.pages.FormPage.formCard">
+      <metrics statements="4" coveredstatements="3" conditionals="1" coveredconditionals="1" methods="2" coveredmethods="1"/>
+      <file name="formCard.tsx" path="/Users/maria/Desktop/reactProject/reactProject-1/vite-project/src/pages/FormPage/formCard/formCard.tsx">
+        <metrics statements="4" coveredstatements="3" conditionals="1" coveredconditionals="1" methods="2" coveredmethods="1"/>
+        <line num="1" count="210" type="cond" truecount="1" falsecount="0"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="19" count="30" type="stmt"/>
+        <line num="21" count="30" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.pages.HomePage">
+      <metrics statements="5" coveredstatements="5" conditionals="1" coveredconditionals="1" methods="2" coveredmethods="2"/>
+      <file name="HomePage.tsx" path="/Users/maria/Desktop/reactProject/reactProject-1/vite-project/src/pages/HomePage/HomePage.tsx">
+        <metrics statements="5" coveredstatements="5" conditionals="1" coveredconditionals="1" methods="2" coveredmethods="2"/>
+        <line num="1" count="210" type="cond" truecount="1" falsecount="0"/>
+        <line num="4" count="30" type="stmt"/>
+        <line num="5" count="24" type="stmt"/>
+        <line num="11" count="30" type="stmt"/>
+        <line num="13" count="30" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.pages.HomePage.Modal">
+      <metrics statements="13" coveredstatements="9" conditionals="2" coveredconditionals="2" methods="5" coveredmethods="2"/>
+      <file name="CloseModal.tsx" path="/Users/maria/Desktop/reactProject/reactProject-1/vite-project/src/pages/HomePage/Modal/CloseModal.tsx">
+        <metrics statements="4" coveredstatements="3" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="1" count="210" type="cond" truecount="1" falsecount="0"/>
+        <line num="2" count="0" type="stmt"/>
+        <line num="7" count="30" type="stmt"/>
+        <line num="9" count="30" type="stmt"/>
+      </file>
+      <file name="Modal.tsx" path="/Users/maria/Desktop/reactProject/reactProject-1/vite-project/src/pages/HomePage/Modal/Modal.tsx">
+        <metrics statements="6" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
+        <line num="10" count="30" type="stmt"/>
+        <line num="11" count="30" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="34" count="30" type="stmt"/>
+      </file>
+      <file name="NotFound.tsx" path="/Users/maria/Desktop/reactProject/reactProject-1/vite-project/src/pages/HomePage/Modal/NotFound.tsx">
+        <metrics statements="3" coveredstatements="3" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="1" count="210" type="cond" truecount="1" falsecount="0"/>
+        <line num="2" count="12" type="stmt"/>
+        <line num="3" count="30" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.pages.HomePage.MyButton">
+      <metrics statements="4" coveredstatements="4" conditionals="1" coveredconditionals="1" methods="2" coveredmethods="2"/>
+      <file name="MyButton.tsx" path="/Users/maria/Desktop/reactProject/reactProject-1/vite-project/src/pages/HomePage/MyButton/MyButton.tsx">
+        <metrics statements="4" coveredstatements="4" conditionals="1" coveredconditionals="1" methods="2" coveredmethods="2"/>
+        <line num="1" count="210" type="cond" truecount="1" falsecount="0"/>
+        <line num="8" count="30" type="stmt"/>
+        <line num="9" count="80" type="stmt"/>
+        <line num="14" count="30" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.pages.HomePage.MyLoader">
+      <metrics statements="3" coveredstatements="3" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+      <file name="MyLoader.tsx" path="/Users/maria/Desktop/reactProject/reactProject-1/vite-project/src/pages/HomePage/MyLoader/MyLoader.tsx">
+        <metrics statements="3" coveredstatements="3" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="1" count="210" type="cond" truecount="1" falsecount="0"/>
+        <line num="2" count="68" type="stmt"/>
+        <line num="7" count="30" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.pages.HomePage.Search">
+      <metrics statements="15" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="5"/>
+      <file name="search.tsx" path="/Users/maria/Desktop/reactProject/reactProject-1/vite-project/src/pages/HomePage/Search/search.tsx">
+        <metrics statements="15" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="5"/>
+        <line num="6" count="224" type="stmt"/>
+        <line num="7" count="224" type="stmt"/>
+        <line num="8" count="303" type="stmt"/>
+        <line num="9" count="224" type="stmt"/>
+        <line num="10" count="224" type="stmt"/>
+        <line num="11" count="94" type="stmt"/>
+        <line num="14" count="224" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="19" count="224" type="stmt"/>
+        <line num="20" count="6" type="stmt"/>
+        <line num="21" count="6" type="stmt"/>
+        <line num="24" count="224" type="stmt"/>
+        <line num="39" count="30" type="stmt"/>
+        <line num="41" count="30" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.pages.HomePage.card">
+      <metrics statements="8" coveredstatements="5" conditionals="1" coveredconditionals="1" methods="3" coveredmethods="2"/>
+      <file name="card.tsx" path="/Users/maria/Desktop/reactProject/reactProject-1/vite-project/src/pages/HomePage/card/card.tsx">
+        <metrics statements="8" coveredstatements="5" conditionals="1" coveredconditionals="1" methods="3" coveredmethods="2"/>
+        <line num="1" count="210" type="cond" truecount="1" falsecount="0"/>
+        <line num="12" count="80" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="18" count="80" type="stmt"/>
+        <line num="26" count="30" type="stmt"/>
+        <line num="28" count="30" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.pages.HomePage.cardList">
+      <metrics statements="10" coveredstatements="10" conditionals="9" coveredconditionals="7" methods="4" coveredmethods="4"/>
+      <file name="cardList.tsx" path="/Users/maria/Desktop/reactProject/reactProject-1/vite-project/src/pages/HomePage/cardList/cardList.tsx">
+        <metrics statements="10" coveredstatements="10" conditionals="9" coveredconditionals="7" methods="4" coveredmethods="4"/>
+        <line num="10" count="88" type="stmt"/>
+        <line num="11" count="167" type="stmt"/>
+        <line num="12" count="88" type="cond" truecount="1" falsecount="0"/>
+        <line num="13" count="88" type="stmt"/>
+        <line num="14" count="88" type="stmt"/>
+        <line num="16" count="88" type="cond" truecount="1" falsecount="0"/>
+        <line num="17" count="20" type="cond" truecount="1" falsecount="0"/>
+        <line num="18" count="8" type="stmt"/>
+        <line num="24" count="80" type="stmt"/>
+        <line num="36" count="30" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.pages.NotFoundPage">
+      <metrics statements="4" coveredstatements="4" conditionals="1" coveredconditionals="1" methods="2" coveredmethods="2"/>
+      <file name="NotFoundPage.tsx" path="/Users/maria/Desktop/reactProject/reactProject-1/vite-project/src/pages/NotFoundPage/NotFoundPage.tsx">
+        <metrics statements="4" coveredstatements="4" conditionals="1" coveredconditionals="1" methods="2" coveredmethods="2"/>
+        <line num="1" count="210" type="cond" truecount="1" falsecount="0"/>
+        <line num="4" count="12" type="stmt"/>
+        <line num="13" count="30" type="stmt"/>
+        <line num="15" count="30" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.pathes">
+      <metrics statements="6" coveredstatements="6" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+      <file name="pathes-enum.ts" path="/Users/maria/Desktop/reactProject/reactProject-1/vite-project/src/pathes/pathes-enum.ts">
+        <metrics statements="6" coveredstatements="6" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="1" count="30" type="cond" truecount="2" falsecount="0"/>
+        <line num="2" count="30" type="stmt"/>
+        <line num="3" count="30" type="stmt"/>
+        <line num="4" count="30" type="stmt"/>
+        <line num="5" count="30" type="stmt"/>
+        <line num="6" count="30" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.store">
+      <metrics statements="15" coveredstatements="13" conditionals="4" coveredconditionals="4" methods="7" coveredmethods="5"/>
+      <file name="apiSlice.ts" path="/Users/maria/Desktop/reactProject/reactProject-1/vite-project/src/store/apiSlice.ts">
+        <metrics statements="7" coveredstatements="6" conditionals="4" coveredconditionals="4" methods="4" coveredmethods="3"/>
+        <line num="4" count="30" type="stmt"/>
+        <line num="10" count="30" type="stmt"/>
+        <line num="17" count="30" type="stmt"/>
+        <line num="20" count="18" type="cond" truecount="2" falsecount="0"/>
+        <line num="25" count="13" type="cond" truecount="2" falsecount="0"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="37" count="30" type="stmt"/>
+      </file>
+      <file name="formSlice.ts" path="/Users/maria/Desktop/reactProject/reactProject-1/vite-project/src/store/formSlice.ts">
+        <metrics statements="3" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="4" count="30" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="16" count="30" type="stmt"/>
+      </file>
+      <file name="index.ts" path="/Users/maria/Desktop/reactProject/reactProject-1/vite-project/src/store/index.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="6" count="30" type="stmt"/>
+        <line num="12" count="30" type="stmt"/>
+      </file>
+      <file name="searchSlice.ts" path="/Users/maria/Desktop/reactProject/reactProject-1/vite-project/src/store/searchSlice.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="7" count="30" type="stmt"/>
+        <line num="14" count="6" type="stmt"/>
+        <line num="19" count="30" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.store.hooks">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="redux.ts" path="/Users/maria/Desktop/reactProject/reactProject-1/vite-project/src/store/hooks/redux.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="4" count="30" type="stmt"/>
+        <line num="5" count="224" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>
